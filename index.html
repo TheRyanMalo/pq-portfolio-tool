@@ -33,7 +33,7 @@
       width: 100px;
     }
     .summary {
-      margin: 20px 0 10px;
+      margin: 0 0 12px;
       font-size: 1.2em;
       font-weight: bold;
     }
@@ -52,6 +52,25 @@
     canvas {
       max-width: 320px;
     }
+
+    /* NEW SECTION */
+    .cta-chart-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .cta-text {
+      max-width: 300px;
+      text-align: left;
+    }
+
+    .cta-chart canvas {
+      max-width: 300px;
+    }
   </style>
 </head>
 <body>
@@ -67,14 +86,16 @@
 
   <p id="totalDisplay">Total: 0%</p>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; margin-top: 40px;">
-  <div style="text-align: left; max-width: 300px;">
-    <div class="summary" id="pqMessage">100% of your crypto portfolio is not post-quantum secure.</div>
-    <a class="cta" href="https://theqrl.org" target="_blank">Learn More About QRL</a>
+  <!-- NEW CTA + CHART LAYOUT -->
+  <div class="cta-chart-section">
+    <div class="cta-text">
+      <div class="summary" id="pqMessage">100% of your crypto portfolio is not post-quantum secure.</div>
+      <a class="cta" href="https://theqrl.org" target="_blank">Learn More About QRL</a>
+    </div>
+    <div class="cta-chart">
+      <canvas id="pqChart"></canvas>
+    </div>
   </div>
-  <canvas id="pqChart"></canvas>
-</div>
-
 
   <script>
     const coins = [
