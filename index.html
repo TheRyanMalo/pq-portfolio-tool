@@ -123,4 +123,74 @@
       slidersDiv.appendChild(div);
     });
 
-    const ctx1 = document.getElementById("portfolioCha
+    const ctx1 = document.getElementById("portfolioChart").getContext("2d");
+    const chart1 = new Chart(ctx1, {
+      type: "pie",
+      data: {
+        labels: coins,
+        datasets: [{
+          data: coins.map(() => 0),
+          backgroundColor: colors,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+
+    const ctx2 = document.getElementById("pqChart").getContext("2d");
+    const chart2 = new Chart(ctx2, {
+      type: "pie",
+      data: {
+        labels: ['Not PQ Secure', 'PQ Secure (QRL)'],
+        datasets: [{
+          data: [100, 0],
+          backgroundColor: ['#ef5350', '#ffaa00'],
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+
+    function updateChart() {
+      let total = 0;
+      let pqSecure = 0;
+
+      const data = coins.map((coin) => {
+        const val = parseInt(inputs[coin].value) || 0;
+        total += val;
+        if (coin === "QRL") pqSecure += val;
+        return val;
+      });
+
+      if (total > 100) {
+        totalDisplay.innerText = `⚠️ Total: ${total}% (must be 100%)`;
+        totalDisplay.style.color = "red";
+      } else {
+        totalDisplay.innerText = `Total: ${total}%`;
+        totalDisplay.style.color = "black";
+      }
+
+      const pqInsecure = 100 - pqSecure;
+      pqMessage.innerText = `${pqInsecure}% of your crypto portfolio is not post-quantum secure.`;
+
+      chart1.data.datasets[0].data = data;
+      chart1.update();
+
+      chart2.data.datasets[0].data = [pqInsecure, pqSecure];
+      chart2.update();
+    }
+  </script>
+</body>
+</html>
