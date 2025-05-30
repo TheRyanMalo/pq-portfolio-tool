@@ -33,9 +33,10 @@
       width: 100px;
     }
     .summary {
-      margin: 0 0 12px;
-      font-size: 1.2em;
-      font-weight: bold;
+      font-size: 1.5em;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #111;
     }
     .cta {
       background: #f9a825;
@@ -53,14 +54,14 @@
       max-width: 320px;
     }
 
-    /* NEW SECTION */
     .cta-chart-section {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       gap: 40px;
-      margin-top: 40px;
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
 
     .cta-text {
@@ -69,7 +70,7 @@
     }
 
     .cta-chart canvas {
-      max-width: 300px;
+      max-width: 280px;
     }
   </style>
 </head>
@@ -84,9 +85,8 @@
     </div>
   </div>
 
-  <p id="totalDisplay">Total: 0%</p>
+  <p id="totalDisplay" style="margin-top: -10px; margin-bottom: 20px;">Total: 0%</p>
 
-  <!-- NEW CTA + CHART LAYOUT -->
   <div class="cta-chart-section">
     <div class="cta-text">
       <div class="summary" id="pqMessage">100% of your crypto portfolio is not post-quantum secure.</div>
