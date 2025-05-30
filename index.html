@@ -67,12 +67,14 @@
 
   <p id="totalDisplay">Total: 0%</p>
 
-  <div class="summary" id="pqMessage">100% of your crypto portfolio is not post-quantum secure.</div>
-  <a class="cta" href="https://theqrl.org" target="_blank">Learn More About QRL</a>
-
-  <div style="margin-top: 40px;">
-    <canvas id="pqChart"></canvas>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; margin-top: 40px;">
+  <div style="text-align: left; max-width: 300px;">
+    <div class="summary" id="pqMessage">100% of your crypto portfolio is not post-quantum secure.</div>
+    <a class="cta" href="https://theqrl.org" target="_blank">Learn More About QRL</a>
   </div>
+  <canvas id="pqChart"></canvas>
+</div>
+
 
   <script>
     const coins = [
