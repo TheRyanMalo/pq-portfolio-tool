@@ -206,7 +206,7 @@
       }
 
       const pqInsecure = 100 - pqSecure;
-      pqMessage.innerText = `${pqInsecure}% of your crypto portfolio is not post-quantum secure.`;
+      pqMessage.innerText = `<strong>${pqInsecure}%</strong> of your crypto portfolio is not post-quantum secure.`;
 
       chart1.data.datasets[0].data = data;
       chart1.update();
