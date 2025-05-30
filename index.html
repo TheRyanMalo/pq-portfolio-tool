@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Post-Quantum Crypto Portfolio&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.slider-container {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.crypto-slider {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 12px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.crypto-slider label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.summary {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 40px 0 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.2em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f9a825;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: black;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>canvas {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;What's in Your Crypto Portfolio?&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Adjust the sliders to match the % of each coin you hold (total must equal 100%).&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="slider-container" id="sliders"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Sliders inserted here by JS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p id="totalDisplay"&gt;Total: 0%&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="summary" id="pqMessage"&gt;87% of your crypto portfolio is not post-quantum secure.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;a class="cta" href="https://theqrl.org" target="_blank"&gt;Learn More About QRL&lt;/a&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;canvas id="portfolioChart"&gt;&lt;/canvas&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const coins = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Bitcoin", "Ethereum", "USDC", "Solana", "DOGE",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Litecoin", "Polkadot", "Monero", "Other", "QRL"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const colors = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"#f7931a", "#627eea", "#2775ca", "#00ffb3", "#c2a633",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"#bebebe", "#e6007a", "#ff6600", "#888888", "#ffaa00"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const slidersDiv = document.getElementById("sliders");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const totalDisplay = document.getElementById("totalDisplay");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const pqMessage = document.getElementById("pqMessage");</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const inputs = {};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>coins.forEach((coin, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const div = document.createElement("div");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>div.className = "crypto-slider";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const label = document.createElement("label");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>label.innerText = coin;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const input = document.createElement("input");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.type = "range";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.min = 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.max = 100;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.value = 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.step = 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.id = coin;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const span = document.createElement("span");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>span.id = `${coin}-val`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>span.innerText = "0%";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.addEventListener("input", () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>span.innerText = input.value + "%";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>updateChart();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>inputs[coin] = input;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>div.appendChild(label);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>div.appendChild(input);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>div.appendChild(span);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>slidersDiv.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const ctx = document.getElementById("portfolioChart").getContext("2d");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const chart = new Chart(ctx, {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>type: "pie",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>data: {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>labels: coins,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>datasets: [{</p>
+<p class="p1"><span class="Apple-converted-space">          </span>data: coins.map(() =&gt; 0),</p>
+<p class="p1"><span class="Apple-converted-space">          </span>backgroundColor: colors,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>responsive: true,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>legend: {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: 'right'</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function updateChart() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let total = 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let pqSecure = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const data = coins.map((coin, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const val = parseInt(inputs[coin].value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>total += val;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (coin === "QRL") pqSecure += val;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return val;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (total &gt; 100) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>totalDisplay.innerText = `⚠️ Total: ${total}% (must be 100% or less)`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>totalDisplay.style.color = "red";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>totalDisplay.innerText = `Total: ${total}%`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>totalDisplay.style.color = "black";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const pqInsecure = 100 - pqSecure;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>pqMessage.innerText = `${pqInsecure}% of your crypto portfolio is not post-quantum secure.`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>chart.data.datasets[0].data = data;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>chart.update();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
