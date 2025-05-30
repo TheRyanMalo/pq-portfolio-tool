@@ -33,14 +33,14 @@
       width: 100px;
     }
     .summary {
-  font-size: 1.5em;
-  font-weight: 400; /* normal text weight */
-  margin-bottom: 10px;
-  color: #111;
-}
-.summary strong {
-  font-weight: 800;
-}
+      font-size: 1.5em;
+      font-weight: 400;
+      margin-bottom: 10px;
+      color: #111;
+    }
+    .summary strong {
+      font-weight: 800;
+    }
     .cta {
       background: #f9a825;
       padding: 14px 24px;
@@ -56,7 +56,6 @@
     canvas {
       max-width: 320px;
     }
-
     .cta-chart-section {
       display: flex;
       flex-wrap: wrap;
@@ -66,12 +65,10 @@
       margin-top: 10px;
       margin-bottom: 20px;
     }
-
     .cta-text {
       max-width: 300px;
       text-align: left;
     }
-
     .cta-chart canvas {
       max-width: 280px;
     }
@@ -92,7 +89,7 @@
 
   <div class="cta-chart-section">
     <div class="cta-text">
-      <div class="summary" id="pqMessage">100% of your crypto portfolio is not post-quantum secure.</div>
+      <div class="summary" id="pqMessage"><strong>100%</strong> of your crypto portfolio is not post-quantum secure.</div>
       <a class="cta" href="https://theqrl.org" target="_blank">Learn More About QRL</a>
     </div>
     <div class="cta-chart">
@@ -209,7 +206,8 @@
       }
 
       const pqInsecure = 100 - pqSecure;
-      pqMessage.innerText = `<strong>${pqInsecure}%</strong> of your crypto portfolio is not post-quantum secure.`;
+
+      pqMessage.innerHTML = `<strong>${pqInsecure}%</strong> of your crypto portfolio is not post-quantum secure.`;
 
       chart1.data.datasets[0].data = data;
       chart1.update();
