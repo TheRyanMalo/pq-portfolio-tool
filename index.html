@@ -38,7 +38,7 @@
       margin-bottom: 10px;
       color: #111;
     }
-    .summary strong {
+    .summary .strong {
       font-weight: 800;
     }
     .cta {
@@ -72,6 +72,24 @@
     .cta-chart canvas {
       max-width: 280px;
     }
+    .tooltip-icon {
+      margin-left: 4px;
+      cursor: pointer;
+      font-weight: normal;
+    }
+    .tooltip-icon:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      background: #333;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 5px;
+      top: 1.5em;
+      left: 1em;
+      white-space: nowrap;
+      z-index: 10;
+      font-size: 0.75em;
+    }
   </style>
 </head>
 <body>
@@ -89,7 +107,7 @@
 
   <div class="cta-chart-section">
     <div class="cta-text">
-      <div class="summary" id="pqMessage"><strong>100%</strong> of your crypto portfolio is not post-quantum secure.</div>
+      <div class="summary" id="pqMessage"><span class="strong">100%</span> of your crypto portfolio is not post-quantum secure.</div>
       <a class="cta" href="https://theqrl.org" target="_blank">Learn More About QRL</a>
     </div>
     <div class="cta-chart">
@@ -102,6 +120,19 @@
       "Bitcoin", "Ethereum", "USDC", "Solana", "DOGE",
       "Litecoin", "Polkadot", "Monero", "Other", "QRL"
     ];
+
+    const cryptoInfo = {
+      "Bitcoin": "SHA256 + ECDSA (not PQ secure)",
+      "Ethereum": "Keccak256 + ECDSA (not PQ secure)",
+      "USDC": "ERC20 on Ethereum (not PQ secure)",
+      "Solana": "ed25519 signatures (not PQ secure)",
+      "DOGE": "Scrypt + ECDSA (not PQ secure)",
+      "Litecoin": "Scrypt + ECDSA (not PQ secure)",
+      "Polkadot": "sr25519/ed25519 (not PQ secure)",
+      "Monero": "RingCT + ed25519 (not PQ secure)",
+      "Other": "Varies by asset (assume not PQ secure)",
+      "QRL": "XMSS (Post-Quantum secure)"
+    };
 
     const colors = [
       "#f7931a", "#627eea", "#2775ca", "#00ffb3", "#c2a633",
@@ -120,6 +151,11 @@
 
       const label = document.createElement("label");
       label.innerText = coin;
+
+      const infoDot = document.createElement("span");
+      infoDot.innerText = "ℹ️";
+      infoDot.className = "tooltip-icon";
+      infoDot.setAttribute("data-tooltip", cryptoInfo[coin]);
 
       const input = document.createElement("input");
       input.type = "range";
@@ -141,6 +177,7 @@
       inputs[coin] = input;
 
       div.appendChild(label);
+      div.appendChild(infoDot);
       div.appendChild(input);
       div.appendChild(span);
       slidersDiv.appendChild(div);
@@ -207,7 +244,7 @@
 
       const pqInsecure = 100 - pqSecure;
 
-      pqMessage.innerHTML = `${pqInsecure}% of your crypto portfolio is not post-quantum secure.`;
+      pqMessage.innerHTML = `<span class="strong">${pqInsecure}%</span> of your crypto portfolio is not post-quantum secure.`;
 
       chart1.data.datasets[0].data = data;
       chart1.update();
